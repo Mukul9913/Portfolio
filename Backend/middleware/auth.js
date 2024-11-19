@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import ErrorHandler from "./error.js";
 import { catchAsyncErrors } from "./catchAsyncErrors.js";
 
-export const isAuthenticated=catchAsyncErrors(async(req,res,next)=>{
+export const isAuthenticated=catchAsyncErrors(async(req,res,next)=>{    
     const {token}=req.cookies;
     if(!token){
         return next(new ErrorHandler("Please Login to access this resource",401));

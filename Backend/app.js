@@ -7,6 +7,9 @@ import dbConnection from "./database/dbConnection.js";
 import { errorMiddleware } from "./middleware/error.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import timelineRoutes from "./routes/timelineRoutes.js"
+import softwareApplicationRoutes from "./routes/softwareApplicationRoutes.js"
+import skillRoutes from "./routes/skillRoutes.js"
 const app=express();
 app.use(cors({origin:[process.env.PORTFORLIO_URL,process.env.DASHBOARD_URL],methods:["GET","POST","PUT","DELETE"],credentials:true}));
 dontenv.config({path:"./config/config.env"});
@@ -16,6 +19,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(fileUpload({useTempFiles:true,tempFileDir:"/tmp/"}))
 app.use("/api/v1/message",messageRoutes);
 app.use("/api/v1/user",userRoutes);
+app.use("/api/v1/timeline",timelineRoutes);
+app.use("/api/v1/softwareapplication",softwareApplicationRoutes);
+app.use("/api/v1/skill",skillRoutes);
+
 dbConnection();
 app.use(errorMiddleware)
 export default app;
