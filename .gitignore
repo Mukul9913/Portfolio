@@ -2,8 +2,8 @@
 /node_modules
 /Frontend/node_modules
 /Backend/node_modules
-/Dashboard/node_modules
-
+/Dashboard/dashboard/node_modules
+/Dashboard/.fetch-client
 # Production build files
 /build
 /Frontend/build
