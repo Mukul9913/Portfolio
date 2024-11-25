@@ -195,7 +195,7 @@ export const updatepassword=catchAsyncErrors(async(req,res,next)=>{
     })
 })
 export const getPortfolio=catchAsyncErrors(async(req,res,next)=>{
-    const id="67370f746554a21e808c7966";
+    const id="6741edd6a851ea8f43dc38e9";
     if(!id){
         return next(new ErrorHandler("Please provide id",400));
     }
@@ -206,7 +206,7 @@ export const getPortfolio=catchAsyncErrors(async(req,res,next)=>{
     res.status(200).json({
         message:"Portfolio fetched successfully",
         status:true,
-        data:user
+        user:user
     })
 })
 export const forgetPasswod=catchAsyncErrors(async(req,res,next)=>{

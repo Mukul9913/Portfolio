@@ -11,8 +11,12 @@ import ViewProject from './pages/ViewProject'
 import UpdateProject from './pages/UpdateProject'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-function App() {
+import { useDispatch } from 'react-redux'
+import { getUser } from './store/slices/userSlice'
 
+function App() {
+const dispatch=useDispatch();
+// dispatch(getUser())
   return (
  <>
  <Router>
